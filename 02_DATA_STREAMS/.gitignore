@@ -1,38 +1,233 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# Dependencies
-node_modules
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*$RECYCLE.BIN*
+
+# General
+*.swp
+*.swo
+*~
+.vscode/settings.json
+.vscode/extensions.json
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+
+# ================ Dependencies ================
+# Go
+bin/
+vendor/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Rust
+target/
+Cargo.lock  # Lock to Cargo.toml for reproducible builds; commit in prod if needed
+
+# Node.js / Yarn / pnpm
+node_modules/
+.nyc_output
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 .pnp
 .pnp.js
+.yarn/
 
-# Local env files
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+.dmypy.json
+dmypy.json
+htmlcov/
+.pylint_cache/
+
+# ================ Build/Output ================
+# General Builds
+dist/
+build/
+out/
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Next.js
+.next/
+out/
+.next/
+.cache/
+
+# NestJS/TS
+dist/
+build/
+*.tsbuildinfo
+
+# Rust (repeated for emphasis)
+target/
+
+# Go Builds
+bin/
+
+# ================ Testing ================
+coverage/
+.nyc_output
+test-results/
+jest-cache/
+tests/
+
+# ================ Database/Logs ================
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+.env.*.local
 
-# Testing
-coverage
+# ================ Web3/Solana ================
+# Anchor/Solana
+anchor/target/
+solana-idl/
+*.key
+*.json  # IDL files; commit if versioned
+programs/*/target/
+tests/localnet/
+keypair.json
 
-# Turbo
-.turbo
+# ZK/Rust Zero
+risc0/target/
+zkvm/target/
 
-# Vercel
-.vercel
+# ================ Docker/K8s/Deploy ================
+# Docker
+Dockerfile.*
+.dockerignore
+.docker/
 
-# Build Outputs
-.next/
-out/
-build
-dist
+# Kubernetes
+k8s/
+*.yaml  # Helm charts; use .helmignore
+*.yml
 
+# Fly.io/ArgoCD
+fly.toml  # Contains secrets
+.gitignore  # Meta-ignore
 
-# Debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Ray/eBPF Traces
+ray_session_latest.*
+/tmp/ray/
+eBPF traces (e.g., cilium-bpf-*.o)
 
-# Misc
-.DS_Store
+# ================ AI/ML Models ================
+# vLLM/Grok-4/CrewAI
+models/
+checkpoints/
+*.bin
+*.safetensors
+*.pt
+*.pth
+wandb/
+runs/
+lightning_logs/
+
+# Pinecone/RAG
+pinecone/
+embeddings/
+
+# ================ Secrets/Keys ================
+# General secrets
 *.pem
+*.key
+*.cert
+*.csr
+*.gpg
+*.pgp
+.id_rsa
+.id_rsa.pub
+*private_key*
+*secret*
+
+# AWS/GCP/Azure (if used)
+.aws/
+azure/
+gcloud/
+
+# ================ Misc ================
+# OS generated
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# IDE
+.vscode/*
+!.vscode/settings.json  # Commit shared settings if needed
+.idea/*
+*.swp
+*.swo
+
+# JetBrains
+.idea/
+
+# ================ Monorepo Tools ================
+# TurboRepo/Lerna
+turbo.json  # Commit this
+lerna-debug.log*
+
+# Prettier/ESLint
+.eslintcache
+prettier.config.js  # Commit if shared
+
+# End of .gitignore 🚀

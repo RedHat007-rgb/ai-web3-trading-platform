@@ -1,0 +1,7 @@
+{
+  "name": "adder",
+  "scripts": {
+    "dev": "cargo run --package adder",
+    "build": "cargo build --package adder"
+  }
+}

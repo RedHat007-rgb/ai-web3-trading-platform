@@ -1,0 +1,7 @@
+{
+  "name": "add_one",
+  "scripts": {
+    "build:rust": "cargo build --release",
+    "build": "cargo build --package add_one"
+  }
+}
